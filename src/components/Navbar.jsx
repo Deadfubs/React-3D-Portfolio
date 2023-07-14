@@ -3,16 +3,26 @@ import styled from "styled-components"
 
 
 const Section = styled.div`
+    position: fixed;
     display: flex;
     justify-content: center;
+    
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+    }
 `;
 
 const Container= styled.div`
-    width: 1200px;
+    width: 1400px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0px;
+    padding: 5px 0px;
+
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+        padding: 10px;
+    }
 `;
 
 const Links= styled.div`
@@ -49,10 +59,10 @@ const Icon= styled.img`
 const Button= styled.button`
     width: 100px;
     padding: 10px;
-    background-color: blueviolet;
+    background-color: violet;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
 `;
 

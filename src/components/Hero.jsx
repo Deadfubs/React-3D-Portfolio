@@ -3,6 +3,7 @@ import styled from "styled-components"
 import Navbar from './Navbar'
 
 
+
 const Section = styled.div`
   height: 100vh;
   scroll-snap-align: center;
@@ -12,9 +13,9 @@ const Section = styled.div`
   justify-content: space-between;
 `;
 const Container = styled.div`
-  height: 100vh;
-  scroll-snap-align: center;
-  width: 1200px;
+  height: 100%;
+  scroll-snap-align: auto;
+  width: 1100px;
   display: flex; 
   justify-content: space-between;
 `;
@@ -54,13 +55,13 @@ const Desc = styled.p`
 `;
 
 const Button = styled.button`
-  background-color: blueviolet;
+  background-color: violet;
   color: white;
   font-weight: 500;
   width: 100px;
   padding: 10px;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
 `;
 
@@ -96,11 +97,10 @@ const Hero = () => {
             <Line src="./img/line.png"/>
             <Subtitle>What I Do</Subtitle>
           </WhatIDo>
-          <Desc>I enjoy creating delightful, human-centered digital experience</Desc>
+          <Desc>I enjoy creating delightful, human-centered digital experience. Also a game dev on the free time.</Desc>
           <Button>Learn More</Button>  
         </Left>
         <Right>
-          {/* 3d model */}
           <Img src="./img/badge.png"/>
         </Right>
       </Container>
