@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { OrbitControls} from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
+import Cube from './Cube'
 
 const Section = styled.div`
   height: 100vh;
@@ -10,7 +13,7 @@ const Section = styled.div`
 const Container = styled.div`
   height: 100vh;
   scroll-snap-align: center;
-  width: 1200px;
+  width: 1400x;
   display: flex;
   justify-content: space-between;
 `;
@@ -62,11 +65,16 @@ const Button = styled.button`
 
 const Who = () => {
   return (
-    <Section>
+    <Section id="who">
       <Container>
         <Left>
-          {/* 3d model */}
-        </Left>
+            <Canvas camera={{ position: [5, 5, 5], fov: 25 }} >
+                <OrbitControls enableZoom={false} autoRotate/>
+                <ambientLight intensity={1}/>
+                <directionalLight position={[3, 2, 1]}/>
+                <Cube/>
+            </Canvas>
+          </Left>
         <Right>
           <Title>Think outside the square space</Title>
           <WhatIDo>

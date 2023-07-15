@@ -1,6 +1,8 @@
-import React from 'react'
+import React, {Suspense} from 'react'
 import styled from "styled-components"
 import Navbar from './Navbar'
+import { MeshDistortMaterial, OrbitControls, Sphere} from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
 
 
 
@@ -15,7 +17,7 @@ const Section = styled.div`
 const Container = styled.div`
   height: 100%;
   scroll-snap-align: auto;
-  width: 1100px;
+  width: 1300px;
   display: flex; 
   justify-content: space-between;
 `;
@@ -54,7 +56,7 @@ const Desc = styled.p`
   color: lightcyan
 `;
 
-const Button = styled.button`
+const Button = styled.a`
   background-color: violet;
   color: white;
   font-weight: 500;
@@ -63,32 +65,36 @@ const Button = styled.button`
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Img = styled.img`
-  width: 800px;
-  height: 600px;
+  width: 525px;
+  height: 450px;
   object-fit: contain;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  top: 0px;
+  bottom: 125px;
+  right: 0px;
+  left: 5px;
   margin: auto;
   animation: animate 2s infinite ease alternate;
   
   @keyframes animate {
     to{
-      transform: translateY(40px);
+      transform: translateY(30px);
     }
-  }
+  };
   
 `;
 
 
 const Hero = () => {
   return (
-    <Section>
+    <Section id="home">
       <Navbar/>
       <Container>
         <Left>
@@ -98,9 +104,26 @@ const Hero = () => {
             <Subtitle>What I Do</Subtitle>
           </WhatIDo>
           <Desc>I enjoy creating delightful, human-centered digital experience. Also a game dev on the free time.</Desc>
-          <Button>Learn More</Button>  
+          <Button href="https://github.com/Deadfubs" target="_blank" rel="noopener noreferrer">
+            Learn More
+          </Button>  
         </Left>
         <Right>
+        <Canvas>
+            <Suspense fallback={null}>
+              <OrbitControls enableZoom={false} />
+              <ambientLight intensity={1} />
+              <directionalLight position={[3, 2, 1]} />
+              <Sphere args={[1, 150, 300]} scale={2.6}>
+                <MeshDistortMaterial
+                  color="#9408ff"
+                  attach="material"
+                  distort={0.5}
+                  speed={2}
+                />
+              </Sphere>
+            </Suspense>
+          </Canvas>
           <Img src="./img/badge.png"/>
         </Right>
       </Container>

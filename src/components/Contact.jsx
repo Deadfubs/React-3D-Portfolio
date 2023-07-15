@@ -46,32 +46,27 @@ const Input = styled.input`
   background-color: #e8e6e6;
   border: none;
   border-radius: 5px;
-  resize: none;
 `;
 
 const TextArea = styled.textarea`
   padding: 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   background-color: #e8e6e6;
-  resize: none;
 `;
 
 const Button = styled.button`
-  background-color: violet;
+  background-color: hotpink;
   color: white;
   border: none;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 6px;
   padding: 20px;
 `;
 
 const Right = styled.div`
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
 
   @media only screen and (max-width: 768px) {
     display: none;
@@ -81,7 +76,6 @@ const Right = styled.div`
 const Contact = () => {
   const ref = useRef();
   const [success, setSuccess] = useState(null);
-  const [error, setError] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -97,7 +91,6 @@ const Contact = () => {
         (result) => {
           console.log(result.text);
           setSuccess(true);
-          setError(null);
           setTimeout(() => {
             setSuccess(null);
           }, 5000);
@@ -105,13 +98,11 @@ const Contact = () => {
         (error) => {
           console.log(error.text);
           setSuccess(false);
-          setError("Failed to send the message. Please try again.");
         }
       );
   };
-
   return (
-    <Section>
+    <Section id="contact">
       <Container>
         <Left>
           <Form ref={ref} onSubmit={handleSubmit}>
@@ -124,12 +115,8 @@ const Contact = () => {
               rows={8}
             />
             <Button type="submit">Send</Button>
-            {success && (
-              <SuccessMessage>
-                Your message has been sent. I'll get back to you soon :)
-              </SuccessMessage>
-            )}
-            {error && <ErrorMessage>{error}</ErrorMessage>}
+            {success &&
+              "Your message has been sent. I'll get back to you soon :)"}
           </Form>
         </Left>
         <Right>
@@ -139,6 +126,5 @@ const Contact = () => {
     </Section>
   );
 };
-
 
 export default Contact;

@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from "styled-components"
+import WebDesign from './WebDesign'
+import Development from './Development'
+import GameDev from './GameDev'
 
 const data = [
   "Web Design",
@@ -75,8 +78,9 @@ const ListItem = styled.li`
 `;
 
 const Works = () => {
+  const [work, setWork] = useState("Web Design")
   return (
-    <Section>
+    <Section id="works">
       <Container>
         <Left>
           <List>
@@ -86,7 +90,11 @@ const Works = () => {
           </List>
         </Left>
         <Right>
-
+          {
+            work == "Web Design" ? (<WebDesign/>) 
+            : work == "Development" ? (<Development/>) 
+            : (<GameDev/>)
+          }        
         </Right>
       </Container>
     </Section>
