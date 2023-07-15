@@ -72,12 +72,12 @@ const Button = styled.a`
 `;
 
 const Img = styled.img`
-  width: 525px;
+  width: 400px;
   height: 450px;
   object-fit: contain;
   position: absolute;
   top: 0px;
-  bottom: 125px;
+  bottom: 100px;
   right: 0px;
   left: 5px;
   margin: auto;
@@ -111,10 +111,9 @@ const Hero = () => {
         <Right>
         <Canvas>
             <Suspense fallback={null}>
-              <OrbitControls enableZoom={false} />
               <ambientLight intensity={1} />
               <directionalLight position={[3, 2, 1]} />
-              <Sphere args={[1, 150, 300]} scale={2.6}>
+              <Sphere args={[1, 100, 200]} scale={2.6}>
                 <MeshDistortMaterial
                   color="#9408ff"
                   attach="material"

@@ -85,7 +85,9 @@ const Works = () => {
         <Left>
           <List>
             {data.map((item)=>(
-              <ListItem key={item} text={item}>{item}</ListItem>
+              <ListItem key={item} text={item} onAnimationStart={()=>setWork(item)}>
+                {item}
+              </ListItem>
             ))}
           </List>
         </Left>
