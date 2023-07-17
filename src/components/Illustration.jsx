@@ -8,7 +8,7 @@ const Illustration = () => {
   return (
     <Canvas>
       <OrbitControls enableZoom={false} autoRotate  />
-      <Stage environment="city" intensity={0.6} position={[2, 0, 0]}>
+      <Stage environment="city" intensity={0.6} position={[2, 0, 0]} shadows={false}>
         <Brush/>
       </Stage>
     </Canvas>
