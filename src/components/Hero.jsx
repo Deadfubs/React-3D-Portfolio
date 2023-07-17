@@ -1,7 +1,7 @@
 import React, {Suspense} from 'react'
 import styled from "styled-components"
 import Navbar from './Navbar'
-import { MeshDistortMaterial, OrbitControls, Sphere} from '@react-three/drei'
+import { MeshDistortMaterial, Sphere} from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 
 
@@ -13,6 +13,10 @@ const Section = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  @media only screen and (max-width: 768px) {
+    height: 200vh;
+  }
 `;
 const Container = styled.div`
   height: 100%;
@@ -20,6 +24,13 @@ const Container = styled.div`
   width: 1300px;
   display: flex; 
   justify-content: space-between;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  };
 `;
 const Left = styled.div`
   flex: 2;
@@ -27,10 +38,22 @@ const Left = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    align-items: center;
+  }
+
+
 `;
 const Right = styled.div`
   flex: 3;
   position: relative;
+
+  @media only screen and (max-width: 768px) {
+    flex: 1;
+    width: 100%;
+  }
 `;
 
 const Title = styled.h1`
@@ -48,12 +71,16 @@ const Line = styled.img`
 `;
 
 const Subtitle = styled.h2`
-  color: hotpink
+  color: hotpink;
 `;
 
 const Desc = styled.p`
   font-size: 24px;
-  color: lightcyan
+  color: lightcyan;
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+    text-align: center;
+  };
 `;
 
 const Button = styled.a`
@@ -82,6 +109,11 @@ const Img = styled.img`
   left: 5px;
   margin: auto;
   animation: animate 2s infinite ease alternate;
+  
+  @media only screen and (max-width: 768px) {
+    width: 300px;
+    height: 300px;
+  };
   
   @keyframes animate {
     to{

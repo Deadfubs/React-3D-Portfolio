@@ -19,6 +19,9 @@ const Container = styled.div`
 `;
 const Left = styled.div`
   flex: 1;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 const Right = styled.div`
   flex: 1;
@@ -26,10 +29,18 @@ const Right = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 20px;
+
+  @media only screen and (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const Title = styled.h1`
   font-size: 74px;
+  @media only screen and (max-width: 768px) {
+    font-size: 60px;
+  }
 `;
 
 const WhatIDo = styled.div`
@@ -51,16 +62,6 @@ const Desc = styled.p`
   color: lightcyan;
 `;
 
-const Button = styled.button`
-  background-color: violet;
-  color: white;
-  font-weight: 500;
-  width: 120px;
-  padding: 10px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-`;
 
 
 const Who = () => {
@@ -84,7 +85,6 @@ const Who = () => {
           <Desc>
             I'm a developer and a Software Engineer student with passion for art and design.
           </Desc>
-          <Button>See my Work</Button>
         </Right>
       </Container>
     </Section>
