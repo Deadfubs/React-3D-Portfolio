@@ -76,7 +76,7 @@ const Subtitle = styled.h2`
 
 const Desc = styled.p`
   font-size: 24px;
-  color: lightcyan;
+  color: #ffffff;
   @media only screen and (max-width: 768px) {
     padding: 20px;
     text-align: center;
@@ -99,8 +99,8 @@ const Button = styled.a`
 `;
 
 const Img = styled.img`
-  width: 400px;
-  height: 450px;
+  width: 350px;
+  height: 350px;
   object-fit: contain;
   position: absolute;
   top: 0px;
@@ -135,7 +135,7 @@ const Hero = () => {
             <Line src="./img/line.png"/>
             <Subtitle>What I Do</Subtitle>
           </WhatIDo>
-          <Desc>I enjoy creating delightful, human-centered digital experience. Also a game dev on the free time.</Desc>
+          <Desc>I enjoy creating delightful, human-centered digital experience. Also a game dev on free time.</Desc>
           <Button href="https://github.com/Deadfubs" target="_blank" rel="noopener noreferrer">
             Learn More
           </Button>  
@@ -145,9 +145,9 @@ const Hero = () => {
             <Suspense fallback={null}>
               <ambientLight intensity={1} />
               <directionalLight position={[3, 2, 1]} />
-              <Sphere args={[1, 100, 200]} scale={2.6}>
+              <Sphere args={[1, 100, 200]} scale={2.2}>
                 <MeshDistortMaterial
-                  color="#9408ff"
+                  color="#ff69b4"
                   attach="material"
                   distort={0.5}
                   speed={2}
