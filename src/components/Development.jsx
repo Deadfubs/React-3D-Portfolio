@@ -1,19 +1,19 @@
-import React, { Suspense } from "react";
-import { OrbitControls } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
-import Atom from "./Atom";
+import { OrbitControls, Stage } from '@react-three/drei'
+import { Canvas } from '@react-three/fiber'
+import React from 'react'
+import Pythonlogo from './Pythonlogo'
 
 
 
 const Development = () => {
   return (
-      <Canvas camera={{ position: [0, 0, 10] }}>
-        <Suspense fallback={null}>
-          <Atom />
-          <OrbitControls enableZoom={false} autoRotate />
-        </Suspense>
-      </Canvas>
-  );
-};
+    <Canvas>
+      <OrbitControls enableZoom={false} autoRotate  />
+      <Stage environment="city" intensity={0.6} position={[2, 0, 0]} shadows={false}>
+        <Pythonlogo/>
+      </Stage>
+    </Canvas>
+  )
+}
 
-export default Development;
+export default Development

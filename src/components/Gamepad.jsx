@@ -16,7 +16,7 @@ export default function Model(props) {
 
   return (
     <group {...props} dispose={null}>
-      <group position={[0, 2.96, -0.13]} rotation={[Math.PI / 2.2, 0, 0]}>
+      <group position={[0, 2.96, -0.13]} rotation={[Math.PI / 2.2, 0, 0]} scale={0.8}>
         <mesh geometry={nodes.GamePad1_polySurface13_White_0.geometry} material={materials.PaletteMaterial001} />
       </group>
     </group>

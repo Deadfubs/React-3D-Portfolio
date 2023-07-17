@@ -8,7 +8,7 @@ const SocialMedia = () => {
   return (
     <Canvas>
       <OrbitControls enableZoom={false} autoRotate  />
-      <Stage environment="city" intensity={0.6} position={[2, 0, 0]} shadows={false}>
+      <Stage environment="city" intensity={0.6} position={[2, 0, 0]} shadows={false} scale={[0.1, 0.1, 0.1]}>
         <Instagram/>
       </Stage>
     </Canvas>

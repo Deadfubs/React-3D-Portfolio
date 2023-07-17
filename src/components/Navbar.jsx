@@ -69,7 +69,7 @@ const Icon = styled.img`
 const Button = styled.a`
   width: 100px;
   padding: 10px;
-  background-color: violet;
+  background-color: hotpink;
   color: white;
   border: none;
   border-radius: 6px;

@@ -14,8 +14,8 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF('/brush-transformed.glb')
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.PaintBrush3_PaintBrush3_0.geometry} material={materials.PaintBrush3} rotation={[-1.771, -0.506, -0.098]} scale={0.025} />
-      <mesh geometry={nodes.PaintBrush3v2_PaintBrush3v2_0.geometry} material={materials.PaintBrush3v2} position={[0, 0, -0.013]} rotation={[-1.751, -0.25, -0.045]} scale={0.025} />
+      <mesh geometry={nodes.PaintBrush3_PaintBrush3_0.geometry} material={materials.PaintBrush3} rotation={[-1.771, -0.506, -0.098]} scale={0.1} />
+      <mesh geometry={nodes.PaintBrush3v2_PaintBrush3v2_0.geometry} material={materials.PaintBrush3v2} position={[0, 0, -0.013]} rotation={[-1.751, -0.25, -0.045]} scale={0.1} />
     </group>
   )
 }

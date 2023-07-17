@@ -84,7 +84,7 @@ const Desc = styled.p`
 `;
 
 const Button = styled.a`
-  background-color: violet;
+  background-color: hotpink;
   color: white;
   font-weight: 500;
   width: 100px;
